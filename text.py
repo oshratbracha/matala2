@@ -31,5 +31,3 @@ def countword():
             if check==word:
                 times=times+1
     return(times)
-
-print(countword())
