@@ -20,7 +20,7 @@ def countword():
     word=str('')
     times=1
     for line in text:
-        word=line.strip('\n')
+        word=line.strip('\n').lower()
         break
     
     for line in text: 
