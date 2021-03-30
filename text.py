@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Mar 26 16:06:46 2021
+Created on Tue Mar 30 14:22:31 2021
 
 @author: oshra
 """
+
 
 def revword(wo):
       rev=str('')
@@ -16,19 +17,19 @@ def revword(wo):
 
 def countword():
     text=open('text.txt','r')
-    lines=list()
     word=str('')
     times=1
     for line in text:
-        lines.append(line)
-        if line is lines[0]:
-            word=str(lines[0]).lower()
-        else:
-            for mila in line.split(): 
-                check=revword(mila)
-                check=check+'\n'
-                if check==word:
-                    times=times+1
+        word=line.strip('\n')
+        break
+    
+    for line in text: 
+        line=line.strip('\n')
+        words=line.split()
+        for mila in words:
+            check=revword(mila)
+            if check==word:
+                times=times+1
     return(times)
 
 print(countword())
